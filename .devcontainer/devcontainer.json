@@ -1,0 +1,17 @@
+{
+    "name": "React VS Code Remote Container",
+    "dockerFile": "Dockerfile",
+    "workspaceMount": "source=vscode-remote-docker-host-react,target=/workspace,type=volume",
+    "workspaceFolder": "/workspace",
+    "appPort": 3000,
+    "extensions": [
+		"CoenraadS.bracket-pair-colorizer",
+		"hazer.ReactCodeSnippets",
+		"Tyriar.sort-lines"
+	],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/zsh"
+    },
+    "postCreateCommand": "yarn",
+    "runArgs": ["-p", "hostIP:hostPort:3000"]
+}
